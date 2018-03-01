@@ -1,0 +1,16 @@
+
+<div class="post_container">
+  <div class="user_display">
+    <%= @post.user.email.split('@')[0] %>
+  </div>
+  <div class="title_display">
+    <%= @post.title %>
+  </div>
+  <div class="pic_display">
+    <%= image_tag(@post.image.url) %>
+  </div>
+  <div class="date_display">
+    Uploaded on: <%= @post.created_at.to_date %>
+  </div>
+</div>
+
