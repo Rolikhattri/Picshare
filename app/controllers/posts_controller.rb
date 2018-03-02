@@ -14,9 +14,14 @@ class PostsController < ApplicationController
   end
 
   def dashboard
-    @user = User.find(params[:user_id])
+    @user = current_user
+    @user = User.find(params[:user_id]) if !params[:user_id].nil?
     @posts = @user.posts.order(created_at: :desc)
-    render :index
+  end
+
+  def following
+    @user = current_user
+    @posts = @user.following.includes(:posts).collect{|u| u.posts}.flatten.sort_by(&:created_at).reverse
   end
 
   def create

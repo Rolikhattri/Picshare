@@ -21,8 +21,11 @@
  }
  .navbar-nav .nav-link{
     font-size: 1.5rem;
-    padding-right: 1rem;
-    padding-left: 1rem;
+ }
+
+ .nav-link{
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
  }
  
  .post_container{
