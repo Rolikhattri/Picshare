@@ -27,7 +27,7 @@ class PostsController < ApplicationController
   def create
     @post = current_user.posts.build(permit_post)
     if @post.save
-        redirect_to post_path(@post)
+        redirect_to dashboard_posts_path
     else
         flash[:error] = @post.errors.full_messages
         redirect_to new_post_path

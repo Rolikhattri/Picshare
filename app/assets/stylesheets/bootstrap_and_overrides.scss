@@ -1,0 +1,87 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Static version of css will use Glyphicons sprites by default
+  =require twitter-bootstrap-static/sprites
+*/
+.container .navbar-brand{
+    font-size: 2.5rem;
+ }
+ .navbar-nav .nav-link{
+    font-size: 1.5rem;
+ }
+
+ .nav-link{
+    padding-right: 1rem !important;
+    padding-left: 1rem !important;
+ }
+
+ .alert-success {
+  margin-top: 10px;
+  padding: 10px; 
+ }
+
+ .page-header a{
+    float: right;
+    margin-top: -32px;
+ }
+
+ .create-post {
+    h3 {
+      margin-bottom: 30px;
+    }
+    text-align: left;
+    .new_post {
+      margin-top: -25px;
+      margin-bottom: 75px;
+      margin-left: 25px
+    }
+    .field  {
+      float: left;
+      label {
+        float: left;
+        margin: 10px;
+      }
+      input {
+        float: left;
+        margin: 10px;
+      }
+    }
+    .actions{
+      margin: 10px;
+    }
+ }
+ 
+ .post_container{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    max-width: 500px;
+    font-size: 1.5rem;
+    border: #000;
+    border-width: 1px;
+    border-radius: 5px;
+    text-align: left;
+    background-color: #EEE;
+    padding: 10px;
+    .user_display{
+      font-weight: bold;
+    }
+    .title_display{
+      margin: 10px;
+    }
+    .pic_display{
+      margin: auto;
+      img{
+        max-width: 450px;
+        max-height: 450px;
+        margin-left: 15px;
+      }
+    }
+    .date_display{
+      text-align: right;
+      font-size: 1rem;
+    }
+ }
+
+

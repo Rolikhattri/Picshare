@@ -1,22 +1,6 @@
 <%- model_class = Post -%>
 <div class="page-header">
-  <h1><%= 'Following' %></h1>
+  <h2><%= 'Following' %></h2>
 </div>
 
-<% @posts.each_with_index do |post, index| %>
-
-  <div class="post_container">
-    <div class="user_display">
-      <%= link_to post.user.email.split('@')[0], dashboard_posts_path(:user_id => post.user.id) %>
-    </div>
-    <div class="title_display">
-      <%= post.title %>
-    </div>
-    <div class="pic_display">
-      <%= image_tag(post.image.url) %>
-    </div>
-    <div class="date_display">
-      Uploaded on: <%= post.created_at.to_date %>
-    </div>
-  </div>
-<% end %> 
+<%= render :partial => 'show_posts' %>

@@ -1,0 +1,22 @@
+
+<div class="page-header create-post">
+  <h3><%= 'Create a new post' %></h3>
+  <% @post = current_user.posts.build() %>
+    <%= form_for @post, html: { multipart: true } do |f| %>
+    <div class="field" >
+      <%= f.label :image %>
+      <%= f.file_field :image %>
+    </div>  
+    <div class="field" >
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field hidden" >
+      <%= f.label :user_id %>
+      <%= f.text_field :user_id %>
+    </div>
+    <div class="actions"style="float: left" >
+      <%= f.submit "Submit", :class => 'btn btn-default btn-xs' %>
+    </div>
+  <% end %>
+</div>
