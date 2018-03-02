@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     collection do
       get 'dashboard'
       get 'following'
+      get 'explore'
     end
   end
   resources :follows do

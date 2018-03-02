@@ -24,6 +24,10 @@ class PostsController < ApplicationController
     @posts = @user.following.includes(:posts).collect{|u| u.posts}.flatten.sort_by(&:created_at).reverse
   end
 
+  def explore
+    @posts = Post.all.order(created_at: :desc)
+  end
+
   def create
     @post = current_user.posts.build(permit_post)
     if @post.save
