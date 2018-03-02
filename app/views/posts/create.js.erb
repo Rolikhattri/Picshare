@@ -1,0 +1,3 @@
+$("#new_post_form").html("<%= escape_javascript(render partial: "posts/form") %>");
+
+$("#myposts").html("<%= escape_javascript(render partial: "posts/show_posts", locals: {@posts => @posts}) %>");

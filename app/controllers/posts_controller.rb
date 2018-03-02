@@ -30,11 +30,15 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(permit_post)
-    if @post.save
-        redirect_to dashboard_posts_path
-    else
+
+    respond_to do |format|
+      if @post.save
+        @posts = current_user.posts.order(created_at: :desc)
+        format.js
+      else
         flash[:error] = @post.errors.full_messages
         redirect_to new_post_path
+      end
     end
   end
 

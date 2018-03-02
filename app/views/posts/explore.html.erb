@@ -1,6 +1,14 @@
 <%- model_class = Post -%>
 <div class="page-header">
   <h1><%= 'All Posts' %></h1>
+  <div id="metadata">
+    <div class="user_data">
+      <%= "Total users: " + User.count.to_s %>
+    </div>
+    <div class="user_data">
+      <%= "Total posts by users: " + @posts.count.to_s %>
+    </div>
+  </div>
 </div>
 
 <%= render :partial => 'show_posts' %>

@@ -2,8 +2,10 @@
 <div class="page-header">
   <% if current_user != @user %>
     <h2><%= @user.email.to_s + '\'s posts' %></h2>
+    <%= render :partial => 'user_metadata' %>
   <% else %>
     <h2><%= 'Your posts' %></h2>
+    <%= render :partial => 'user_metadata' %>
   <% end %>
   <% if current_user.following.include?(@user) %>
     <%= link_to "Un-follow", unfollow_user_follows_path(:user_id => @user.id), :class => 'btn btn-success btn-xs' %>
@@ -13,8 +15,11 @@
 </div>
 
 <% if @user.nil? || current_user == @user %>
-  <%= render :partial => 'form' %>
+  <div id="new_post_form">
+    <%= render :partial => 'form' %>
+  </div>
 <% end %>
 
-<%= render :partial => 'show_posts' %>
- 
+<div id="myposts">
+  <%= render :partial => 'show_posts' %>
+</div>

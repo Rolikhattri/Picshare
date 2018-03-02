@@ -2,7 +2,7 @@
 <div class="page-header create-post">
   <h3><%= 'Create a new post' %></h3>
   <% @post = current_user.posts.build() %>
-    <%= form_for @post, html: { multipart: true } do |f| %>
+    <%= form_for @post, html: { multipart: true }, remote: true do |f| %>
     <div class="field" >
       <%= f.label :image %>
       <%= f.file_field :image %>

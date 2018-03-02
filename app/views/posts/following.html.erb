@@ -1,6 +1,14 @@
 <%- model_class = Post -%>
 <div class="page-header">
   <h2><%= 'Following' %></h2>
+  <div id="following_metadata">
+    <div class="user_data">
+      <%= "Followed users: " + @user.following.count.to_s %>
+    </div>
+    <div class="user_data">
+      <%= "Total posts by users followed: " + @posts.count.to_s %>
+    </div>
+  </div>
 </div>
 
 <%= render :partial => 'show_posts' %>
