@@ -35,6 +35,7 @@ class PostsController < ApplicationController
       if @post.save
         @posts = current_user.posts.order(created_at: :desc)
         format.js
+        format.html { redirect_to dashboard_posts_path, notice: 'Post was successfully created.' }
       else
         flash[:error] = @post.errors.full_messages
         redirect_to new_post_path
